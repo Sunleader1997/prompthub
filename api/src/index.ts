@@ -41,7 +41,7 @@ const publicPath = path.join(__dirname, '../public');
 app.use(express.static(publicPath));
 
 // Handle SPA Routing - Send index.html for all other requests
-app.get('*', (req, res) => {
+app.get(/.*/, (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 });
 
